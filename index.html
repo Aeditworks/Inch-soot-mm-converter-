@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -446,10 +447,7 @@ body::before{
 <div class="ad-top-wrap">
   <div class="ad-top"></div>
 </div>
-<!-- Special for fabricators & Site Worker -->
-<div style="text-align:center; padding:12px 20px; background:#1a1a1a; border-bottom:1px solid #272727;">
-  <strong style="color:#e6a817; font-size:13px;">👷‍♂️ 100% Free Inch–Soot to MM Converter Tool – UPVC, Aluminium, Glass, Pleated Mesh, Slim Profile, Carpenters, Shuttering & Civil Fabricators ke liye perfect </strong>
-</div>
+
 <main class="shell">
 
   <!-- ══ CONVERTER 1: Inch/Soot → MM ══ -->
@@ -587,7 +585,7 @@ body::before{
   <!-- FOOTER -->
   <div class="sec" style="padding-top:28px"><span class="sec-text">&nbsp;</span></div>
   <footer class="footer">
-    <div class="footer-credit">Built by <strong>Abbas Khan</strong> — free tool for Contstruction work</div>
+    <div class="footer-credit">Built by <strong>Abbas Khan</strong> — free tool for field workers</div>
     <div class="social-links">
       <a class="social-link" href="https://twitter.com/bhai_jaan_7" target="_blank" rel="noopener" aria-label="Twitter">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -837,23 +835,22 @@ function esc(s) {
 // ════════════════════════════════════════════════════
 //  SOOT REFERENCE TABLE
 // ════════════════════════════════════════════════════
-<div class="sec">
-  <span class="sec-text">SOOT REFERENCE CHART (UPVC • Aluminium • Carpentry • Shuttering)</span>
-</div> <div class="card" style="margin:0 16px 24px;">
-  <div class="card-body" style="padding:0;">
-    <table style="width:100%; border-collapse:collapse; font-family:var(--mono); font-size:13px; color:var(--text);">
-      <thead>
-        <tr style="background:var(--raised);">
-          <th style="padding:12px 8px; text-align:center; border-bottom:1px solid var(--border);">SOOT</th>
-          <th style="padding:12px 8px; text-align:center; border-bottom:1px solid var(--border);">FRACTION</th>
-          <th style="padding:12px 8px; text-align:center; border-bottom:1px solid var(--border);">DECIMAL (INCH)</th>
-          <th style="padding:12px 8px; text-align:center; border-bottom:1px solid var(--border);">MM</th>
-        </tr>
-      </thead>
-      <tbody id="refBody"></tbody>  <!-- <-- ye id JS ke liye zaroori hai, khali rehne do -->
-    </table>
-  </div>
-</div>
+function buildRefTable() {
+  const tbody = document.getElementById('refBody');
+  const rows = [];
+  for (let soot = 0; soot <= 7; soot++) {
+    const dec = soot / 8;
+    const mm  = dec * 25.4;
+    rows.push(`<tr>
+      <td>${soot}</td>
+      <td>${soot}/8"</td>
+      <td>${dec === 0 ? '0.000' : dec.toFixed(3)}"</td>
+      <td>${mm === 0 ? '0' : mm.toFixed(3)} mm</td>
+    </tr>`);
+  }
+  tbody.innerHTML = rows.join('');
+}
+
 // ════════════════════════════════════════════════════
 //  EVENT LISTENERS
 // ════════════════════════════════════════════════════
