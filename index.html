@@ -838,23 +838,27 @@ function esc(s) {
 //  SOOT REFERENCE TABLE
 // ════════════════════════════════════════════════════
 <div class="sec">
-  <span class="sec-text">Soot Reference Chart (for UPVC, Aluminium, Carpentry etc)</span>
+<div class="sec">
+  <span class="sec-text">SOOT REFERENCE CHART (UPVC • Aluminium • Carpentry • Shuttering)</span>
 </div>
-  function buildRefTable() {
-  const tbody = document.getElementById('refBody');
-  const rows = [];
-  for (let soot = 0; soot <= 7; soot++) {
-    const dec = soot / 8;
-    const mm  = dec * 25.4;
-    rows.push(`<tr>
-      <td>${soot}</td>
-      <td>${soot}/8"</td>
-      <td>${dec === 0 ? '0.000' : dec.toFixed(3)}"</td>
-      <td>${mm === 0 ? '0' : mm.toFixed(3)} mm</td>
-    </tr>`);
-  }
-  tbody.innerHTML = rows.join('');
-}
+
+<div class="card" style="margin:0 16px 24px;">
+  <div class="card-body" style="padding:0;">
+    <table style="width:100%; border-collapse:collapse; font-family:var(--mono); font-size:13px; color:var(--text);">
+      <thead>
+        <tr style="background:var(--raised);">
+          <th style="padding:12px 8px; text-align:center; border-bottom:1px solid var(--border);">SOOT</th>
+          <th style="padding:12px 8px; text-align:center; border-bottom:1px solid var(--border);">FRACTION</th>
+          <th style="padding:12px 8px; text-align:center; border-bottom:1px solid var(--border);">DECIMAL (INCH)</th>
+          <th style="padding:12px 8px; text-align:center; border-bottom:1px solid var(--border);">MM</th>
+        </tr>
+      </thead>
+      <tbody id="refBody">
+        <!-- JavaScript yahan dynamically rows bharega -->
+      </tbody>
+    </table>
+  </div>
+</div>
 
 // ════════════════════════════════════════════════════
 //  EVENT LISTENERS
