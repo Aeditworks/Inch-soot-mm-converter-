@@ -1,0 +1,40 @@
+{
+  "name": "Inch & Soot to MM Converter",
+  "short_name": "Inch Converter",
+  "description": "Free tool to convert Inches, Soot and MM instantly. Used by carpenters, fabricators and site engineers.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#0f0f0f",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Inch to MM",
+      "url": "./#inchSoot",
+      "description": "Convert Inch & Soot to Millimeters"
+    },
+    {
+      "name": "MM to Inch",
+      "url": "./#mm",
+      "description": "Convert Millimeters to Inch & Soot"
+    }
+  ]
+}
